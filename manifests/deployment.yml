@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ngnxappnew 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ngnxappnew
+  template:
+    metadata:
+      labels:
+        app: ngnxappnew 
+    spec:
+      containers:
+        - name: ngnxappnew 
+          image: aksapptoacr.azurecr.io/ngnxappnew
+          ports:
+          - containerPort: 80
